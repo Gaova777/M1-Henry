@@ -15,9 +15,23 @@ Como ejercicio adicional y completamente opcional, al terminar de resolver este 
 */
 
 function nFactorial(n) {
+  
+  if(n<0) return -1; //podría generar error
+  //0! = 1 && 1! =1
+  if(n>0 && n<2) return 1;
+
+  return n*nFactorial(n-1) //el caso base es lo primordial en este tipo de problemas, ya que es impresindible saber hasta donde llegaremos o se nos formará un bucle infinito (creo yo), en este caso el factorial de un numero donde va disminuyendo a medida que hacela operacion, entra el valor ingresado por el uusario, caso sea 5, recurre a las condiciones y se demuestra que puede retornar 5*4! y luegro ingresar 4, pasa las condiciones y luego hace 4*3! y seguido hace todo hasta que llegue a 0 o 1, donde retorna el valor de 1, luego hace la operacion apilada de stuck, y retorna un nuevo valor bajo la operacion que le siguee 
+
 }
 
+
+
 function nFibonacci(n) {
+
+  if(n>=0 && n<2) return n; //super clave ya que acá me retornará el caso base que será 1 o 0
+
+  return nFibonacci(n-1) + nFibonacci(n-2)
+
 }
 
 /*
@@ -30,7 +44,17 @@ Pueden utilizar class o función constructora.
 */
 
 function Queue() {
+  this.arr = []
+}
 
+Queue.prototype.enqueue = function(value){
+  this.Queue.push(value)
+}
+Queue.prototype.dequeue = function(value){
+  return this.Queue.shift(value)
+}
+Queue.prototype.size = function(value){
+  return this.Queue.length(value)
 }
 
 // No modifiquen nada debajo de esta linea
