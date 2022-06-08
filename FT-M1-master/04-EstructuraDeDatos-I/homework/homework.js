@@ -47,15 +47,22 @@ function Queue() {
   this.arr = []
 }
 
+// var miLista = new Queue () --> {arr : []}  es una forma de instanciar la clase que cree
+
+// si llamamos los metodos --> miLista.enqueue() --> {arr: []} -> no lo encuentra por lo tanto busca en el prototipe de Queue, que es lo que tenemos abajo
 Queue.prototype.enqueue = function(value){
-  this.Queue.push(value)
+  this.arr.push(value)
 }
-Queue.prototype.dequeue = function(value){
-  return this.Queue.shift(value)
+Queue.prototype.dequeue = function(){
+  return this.arr.shift() //no es necesario asignar value, ya que debo sacar un valor del arreglo que cree en un principio
 }
-Queue.prototype.size = function(value){
-  return this.Queue.length(value)
+Queue.prototype.size = function(){
+  return this.arr.length; //tampoco es necesario asginarle un value a la funcion ya que accedemos a la que ya está
 }
+
+//es muy importante destacat que cada que llamemos el metodo de la instancia creada con el new --> var miLista = new Queue() y acceder a un metodo de esa clase de la cual instanciamos, lo que sucede es que buscará dentro de la clase como no está, accederá a buscar en el prototipe de Queue, que es donde están las gunciones arriba
+
+
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
