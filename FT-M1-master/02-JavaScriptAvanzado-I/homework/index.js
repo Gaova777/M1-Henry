@@ -78,22 +78,22 @@
 // getFood(false);//retorna Meow Mix, error, no dio así
 
 
-// var fullname = 'Juan Perez';
-// var obj = {
-//    fullname: 'Natalia Nerea',
-//    prop: {
-//       fullname: 'Aurelio De Rosa',
-//       getFullname: function() {
-//          return this.fullname;
-//       }
-//    }
-// };
+var fullname = 'Juan Perez';
+var obj = {
+   fullname: 'Natalia Nerea',
+   prop: {
+      fullname: 'Aurelio De Rosa',
+      getFullname: function() {
+         return this.fullname;
+      }
+   }
+};
 
-// console.log(obj.prop.getFullname()); //1)Aurelio De Rosa
+console.log(obj.prop.getFullname()); //1)Aurelio De Rosa
 
-// var test = obj.prop.getFullname; 
+var test = obj.prop.getFullname; 
 
-// console.log(test()); //2) Aurelio De Rosa, error, se elimino el entorno de ejecusion (creo)
+console.log(test()); //2) Aurelio De Rosa, error, se elimino el entorno de ejecusion (creo)
 
 
 // function printing() {
@@ -110,9 +110,16 @@
 //  // 3
 //  // 2
 
-console.log(bar);//1) 1
-console.log(baz);//2) undf acá se daña el codigo por la no creacion de la variable
-foo();
-function foo() { console.log('Hola!'); }//3)
-var bar = 1;
-baz = 2;
+// console.log(bar);//1) 1
+// console.log(baz);//2) undf acá se daña el codigo por la no creacion de la variable
+// foo();
+// function foo() { console.log('Hola!'); }//3)
+// var bar = 1;
+// baz = 2;
+
+// function hola(){
+//     console.log('hola');
+//    }
+   
+//    hola.saludo = 'Buen Día';
+//    console.log(hola);
