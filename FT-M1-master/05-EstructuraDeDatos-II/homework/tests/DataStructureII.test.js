@@ -34,13 +34,13 @@ describe('Una linked list', function() {
   });
 
   it('La clase Node deberia tomar un valor como argumento y definir next como null por default', function() {
-    var node = new Node('test');
+    var node = new Node('test'); //en esta seccion vemos que test y el test de abajo hacen referencia a value donde me indica que son el mismo valor, por eso la funcion node es así
     expect(node.value).toBe('test');
     expect(node.next).toBe(null);
   });
 
   it('linkedlist deberia usar la clase Node para agregar nodos en add', function() {
-    linkedList.add('first');
+    linkedList.add('first');//acede a la clase linkedlist, usa el metodo add y coloca su primer valor
     expect(linkedList.head instanceof Node).toBe(true);
   });
 
